@@ -2,7 +2,7 @@
 #include "Color.h"
 #include <algorithm> 
 
-Player::Player(int x, int y, int width, int height)
+Player::Player(float x, float y, int width, int height)
 {
 	this->x = x;
 	this->y = y;
@@ -14,7 +14,7 @@ Player::Player(int x, int y, int width, int height)
 
 }
 
-int newMax(int a, float b)
+float newMax(int a, float b)
 {
 	if (a > b)
 		return a;
@@ -23,7 +23,7 @@ int newMax(int a, float b)
 
 }
 
-int newMin(int a ,float b)
+float newMin(int a ,float b)
 {
 	if (a < b)
 		return a;
@@ -36,11 +36,11 @@ void Player::Update(float deltaTime)
 {
 	if (this->dy < 0)
 	{
-		this->y = newMax(0, this->y + this->dy * deltaTime /60);
+		this->y = newMax(0, this->y + this->dy * deltaTime );
 	}
 		else 
 		{
-		this->y = newMin(GetScreenHeight() - this->height, this->y + this->dy * deltaTime / 60);
+		this->y = newMin(GetScreenHeight() - this->height, this->y + this->dy * deltaTime);
 		}
 	
 	

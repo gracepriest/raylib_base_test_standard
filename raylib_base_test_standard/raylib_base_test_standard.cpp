@@ -14,7 +14,7 @@
 
 int main(void)
 { 
-   
+    
     HandleConsole CONSOLE;
     CONSOLE.HideConsole();
     Game game;

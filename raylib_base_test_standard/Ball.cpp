@@ -2,7 +2,7 @@
 #include "Color.h"
 
 
-Ball::Ball(int X, int Y, int Width, int Height, double DY, double DX)
+Ball::Ball(float X, float Y, int Width, int Height, float DY, float DX)
 {
 	this->x = 1280 / 2; 
 	this->y = 720 / 2;
@@ -15,18 +15,34 @@ Ball::Ball(int X, int Y, int Width, int Height, double DY, double DX)
 
 void Ball::reset()
 {
-
+	this->x = GetScreenWidth() / 2 - 2;
+	this->y = GetScreenHeight() / 2 - 2;
+	this->dx = 0;
+	this->dy = 0;
 }
 
-bool Ball::Collides()
+bool Ball::Collides(Player player)
 {
-	return 0;
+	if (this->x > player.x + player.width or player.x > this->x + this->width)
+		return false;
+		
+		// then check to see if the bottom edge of either is higher than the top
+		// edge of the other
+
+	if (this->y > player.y + player.height or player.y > this->y + this->height)
+		return false;
+
+	else
+		// if the above aren't true, they're overlapping
+		return true;
+	
 }
 
-void Ball::update(double dt)
+void Ball::update(float dt)
 {
-	this->x =+ this->dx * dt;
-	this->y =+ this->dy * dt;
+	this->x += this->dx *dt/100;
+	
+	this->y+= this->dy * dt/100;
 }
 
 void Ball::render()

@@ -3,15 +3,15 @@
 class Player
 {
 public:
-    int x;
-    int y;
+    float x;
+    float y;
     int width;
     int height;
-    int dy;
-    int dx;
+    float dy;
+    float dx;
     bool ai;
 
-	Player(int x, int y, int width, int height);
+	Player(float x, float y, int width, int height);
 	~Player();
 
     void Update(float detlaTime);

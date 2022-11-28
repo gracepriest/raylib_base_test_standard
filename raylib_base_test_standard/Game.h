@@ -1,5 +1,6 @@
 #pragma once
 //Use to create and control the game
+#include "raylib.h"
 
 class Game
 {
@@ -8,6 +9,8 @@ public:
 	int screenHeight;
 
 	
+	
+	void UpdateState();
 
 	Game();
 	
@@ -29,6 +32,10 @@ public:
 	char CheckKeyPress();
 
 	void Start();
+
+
+	
+
 	~Game();
 	
 

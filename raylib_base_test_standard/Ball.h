@@ -1,23 +1,23 @@
 #pragma once
-
+#include "Player.h"
 class Ball
 {
 public:
-	int x;
-	int y;
+	float x;
+	float y;
 	int width;
 	int height;
 
 	//vec
-	double dy;
-	double dx;
+	float dy;
+	float dx;
 
-	Ball(int X, int Y,int Width,int Height, double DY, double DX);
+	Ball(float X, float Y,int Width,int Height, float DY, float DX);
 	~Ball();
 
-	bool Collides();
+	bool Collides(Player player);
 	void reset();
-	void update(double dt);
+	void update(float dt);
 	void render();
 
 };

@@ -6,13 +6,3 @@
 
 #define MEANGREEN   CLITERAL(Color){ 51, 80, 52, 255 }
 
-
-
-
-
-
-
-
-
-
-

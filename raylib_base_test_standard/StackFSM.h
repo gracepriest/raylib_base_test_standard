@@ -12,6 +12,7 @@ class StackFSM
 
 public:
     std::stack<T> GameState;                     // function pointer declaration  
+    T currentStateFunction;
 
     StackFSM()
     {
@@ -32,7 +33,7 @@ public:
     {
         //will be called in the game loop to update state
         //void (*currentStateFunction)();
-        T currentStateFunction;
+        
         if (!GameState.empty())
         {
              currentStateFunction = getCurrentState();
@@ -59,7 +60,6 @@ public:
                 this->pushState(GameStates::PLAY);    //push the second screen
 
             }
-      
 
     }
 
@@ -81,18 +81,4 @@ public:
         }
     }
 
-
-
-
-
 };
-
-
-
-
-
-
-
-
-
-
